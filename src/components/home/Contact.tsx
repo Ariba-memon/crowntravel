@@ -1,11 +1,10 @@
-'use client';
+"use client";
 import SmsImage from "@/assets/sms.svg";
 import CallinImage from "@/assets/callin.svg";
 import CallgoImage from "@/assets/callgoing.svg";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import ContactForm from "./ContactForm";
-
 
 export default function Contact() {
   const [messageOpen, setMessageOpen] = useState(false);
