@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import StarsImage from "@/assets/5stars.png";
 import BackArrowImage from "@/assets/backArrow.svg";
-import ForwardArrowImage from "@/assets/forwardArroa.svg";
+import ForwardArrowImage from "@/assets/forwardArroa.svg"; 
 
 const testimonials = [
   {
@@ -55,7 +55,6 @@ const testimonials = [
     authorPost: "Pharmacist",
   },
 ];
-
 interface TestimonialProps {
   description: string;
   authorName: string;
@@ -66,54 +65,61 @@ function Testimonials() {
   const [startIndex, setStartIndex] = useState(0);
 
   const showPrevious = () => {
-    if (startIndex > 0) {
-      setStartIndex(startIndex - 1);
-    }
+    setStartIndex((prevIndex) =>
+      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
+    );
   };
 
   const showNext = () => {
-    if (startIndex + 2 < testimonials.length) {
-      setStartIndex(startIndex + 1);
-    }
+    setStartIndex((prevIndex) =>
+      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+    );
   };
 
   return (
     <div className="py-10 bg-gray-100">
-      <div className="max-w-5xl mx-auto p-5">
+      <div className="max-w-8xl mx-auto p-5">
         <h2 className="text-5xl font-bold text-center mb-6">Testimonials</h2>
         <div className="flex justify-between gap-8 items-center overflow-hidden relative">
           <button
-            className={`size-16 rounded-xl bg-stone-500 relative cursor-pointer ${
-              startIndex === 0 ? "opacity-50 pointer-events-none" : ""
-            }`}
+            className="size-16 rounded-xl bg-stone-500 relative cursor-pointer"
             onClick={showPrevious}
-            disabled={startIndex === 0}
           >
-            <Image src={BackArrowImage} alt="back arrow" className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-8 w-full" />
+            <Image
+              src={BackArrowImage}
+              alt="back arrow"
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-8 w-full"
+            />
           </button>
           <div className="flex gap-4 overflow-hidden w-full">
-            {testimonials.slice(startIndex, startIndex + 2).map((testimonial, index) => (
-              <div
-                key={index}
-                className="flex-1 bg-white border border-gray-300 rounded-lg p-4 flex flex-col items-center gap-4"
-              >
-                <Image src={StarsImage} alt="stars image" className="w-1/2 object-contain" />
-                <p className="text-lg text-center">{testimonial.description}</p>
-                <div className="flex flex-col items-center">
-                  <p className="text-xl font-bold text-stone-500">{testimonial.authorName}</p>
-                  <p className="text-md">{testimonial.authorPost}</p>
+            {testimonials
+              .slice(startIndex, startIndex + 4)
+              .concat(
+                testimonials.slice(0, Math.max(0, startIndex + 4 - testimonials.length))
+              )
+              .map((testimonial, index) => (
+                <div
+                  key={index}
+                  className="flex-1 bg-white border border-gray-300 rounded-lg p-4 flex flex-col items-center gap-4"
+                >
+                  <Image src={StarsImage} alt="stars image" className="w-1/2 object-contain" />
+                  <p className="text-lg text-center">{testimonial.description}</p>
+                  <div className="flex flex-col items-center">
+                    <p className="text-xl font-bold text-stone-500">{testimonial.authorName}</p>
+                    <p className="text-md">{testimonial.authorPost}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
           <button
-            className={`size-16 rounded-xl bg-stone-500 relative cursor-pointer ${
-              startIndex + 2 >= testimonials.length ? "opacity-50 pointer-events-none" : ""
-            }`}
+            className="size-16 rounded-xl bg-stone-500 relative cursor-pointer"
             onClick={showNext}
-            disabled={startIndex + 2 >= testimonials.length}
           >
-            <Image src={ForwardArrowImage} alt="forward arrow" className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-8 w-full" />
+            <Image
+              src={ForwardArrowImage}
+              alt="forward arrow"
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-8 w-full"
+            />
           </button>
         </div>
       </div>
@@ -122,10 +128,6 @@ function Testimonials() {
 }
 
 export default Testimonials;
-
-
-
-
 
 
 

@@ -73,7 +73,7 @@ function ContactForm({ requestOpen, setRequestOpen }: InfoProps) {
       }`}
     >
       <div
-        className={`bg-white rounded-lg border-[1px] shadow-2xl border-gray-300 p-5 flex flex-col gap-4 w-full md:w-2/3 xl:w-1/3 relative transform transition-transform duration-300 ${
+        className={`bg-black rounded-lg border-[1px] shadow-2xl border-gray-300 p-5 flex flex-col gap-4 w-full md:w-2/3 xl:w-1/3 relative transform transition-transform duration-300 ${
           requestOpen ? "black" : "-translate-y-full"
         }`}
       >
@@ -85,12 +85,12 @@ function ContactForm({ requestOpen, setRequestOpen }: InfoProps) {
         >
           X
         </div>
-        <p className="text-xl">Contact Message</p>
+        <p className="text-xl text-white">Contact Message</p>
         <div className="flex flex-col w-full gap-2 pt-2">
           <div className="grid grid-cols-2 gap-2 w-full text-sm">
             <div className="flex flex-col gap-1 w-full">
               <div className="flex gap-2 items-end">
-                <p className="leading-4">Name</p>
+                <p className="leading-4 text-white">Name</p>
                 {errors.name && (
                   <span className="text-red-600 text-xs">{errors.name}</span>
                 )}
@@ -115,7 +115,7 @@ function ContactForm({ requestOpen, setRequestOpen }: InfoProps) {
             </div>
             <div className="flex flex-col gap-1 w-full">
               <div className="flex gap-2 items-end">
-                <p className="leading-4">Phone</p>
+                <p className="leading-4 text-white">Phone</p>
                 {errors.phone && (
                   <span className="text-red-600 text-xs">{errors.phone}</span>
                 )}
@@ -143,7 +143,7 @@ function ContactForm({ requestOpen, setRequestOpen }: InfoProps) {
           <div className="grid grid-cols-1 gap-2 w-full">
             <div className="flex flex-col gap-1 w-full">
               <div className="flex gap-2 items-end">
-                <p className="leading-4">Email</p>
+                <p className="leading-4 text-white">Email</p>
                 {errors.email && (
                   <span className="text-red-600 text-xs">{errors.email}</span>
                 )}
@@ -160,7 +160,7 @@ function ContactForm({ requestOpen, setRequestOpen }: InfoProps) {
             </div>
             <div className="flex flex-col gap-1 w-full">
               <div className="flex gap-2 items-end">
-                <p className="leading-4">Description</p>
+                <p className="leading-4 text-white">Description</p>
                 {errors.description && (
                   <span className="text-red-600 text-xs">
                     {errors.description}
@@ -181,7 +181,7 @@ function ContactForm({ requestOpen, setRequestOpen }: InfoProps) {
             </div>
             <button
               onClick={FormSubmit}
-              className="w-full p-2 bg-black hover:text-stone-500 hover:bg-white border transition-all duration-300 border-stone-500 font-bold rounded-lg text-white"
+              className="w-full p-2  bg-black hover:text-stone-900 hover:bg-white border transition-all duration-300 border-stone-500 font-bold rounded-lg text-white"
             >
               {loading ? "Sending..." : "Send"}
             </button>

@@ -38,7 +38,7 @@ function Blogs() {
       <p className="text-center text-lg text-white bg-stone-500 rounded-full py-1 px-2">
       Our Blog
       </p>
-      <p className="text-center text-4xl font-bold ">Recent Posts</p>
+      <p className="text-center text-5xl font-bold ">Recent Posts</p>
     
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {blogsList.map((item, index) => {
