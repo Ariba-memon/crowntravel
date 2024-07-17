@@ -406,7 +406,7 @@ export default function Checkout() {
                           htmlFor="normalDelivery"
                           className="ml-3 block text-sm font-medium text-gray-700 dark:text-gray-300"
                         >
-                          Normal Delivery (6 pounds)
+                          Normal Delivery (3-5 working days)
                         </label>
                       </div>
                       <div className="flex items-center space-x-2 mt-2">
@@ -423,7 +423,7 @@ export default function Checkout() {
                           htmlFor="expressDelivery"
                           className="ml-3 block text-sm font-medium text-gray-700 dark:text-gray-300"
                         >
-                          Express Delivery (10 pounds)
+                          Express Delivery (within 48 hours)
                         </label>
                       </div>
                     </div>

@@ -388,12 +388,12 @@ const [formType, setFormType] = useState('umrah')
       <InfoForm data={data} requestOpen={requestOpen} setRequestOpen={setRequestOpen} />
 
       <div className="absolute w-full md:w-11/12 2xl:w-2/3 -translate-x-1/2 left-1/2 bottom-0  bg-stone-800/80 translate-y-1/2 ">
-      <div className="w-full relative p-5">
+      <div className="w-full relative p-20">
       <div className="absolute bottom-full left-0  grid grid-cols-2 w-full">
            <p onClick={()=>{setFormType('umrah')}} className={`py-2 rounded-lg px-4 ${formType=='umrah'?"bg-stone-700 text-white":"bg-neutral-400 text-white/50"} cursor-pointer  border border-white w-full text-center`}>Umrah</p>
            <p onClick={()=>{setFormType('tour')}} className={`py-2 rounded-lg px-4 ${formType=='tour'?"bg-stone-700 text-white":"bg-neutral-400 text-white/50"} cursor-pointer  border border-white w-full text-center`}>World Tour</p>
           </div>
-        <div className="w-full h-full flex flex-col gap-4 ">
+        <div className="w-full h-full flex flex-col gap-4 m-10">
           
           <div>
             <p className="text-white">Flexibility in Dates</p>

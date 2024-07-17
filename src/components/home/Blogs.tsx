@@ -35,9 +35,7 @@ const blogsList = [
 function Blogs() {
   return (
     <div className="flex flex-col gap-6 justify-center items-center p-5">
-      <p className="text-center text-lg text-white bg-stone-500 rounded-full py-1 px-2">
-      Our Blog
-      </p>
+    
       <p className="text-center text-5xl font-bold ">Recent Posts</p>
     
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">

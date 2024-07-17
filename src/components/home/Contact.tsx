@@ -70,7 +70,7 @@ export default function Contact() {
             <p className="text-xl font-bold text-stone-500">Send Message</p>
           </div>
           <div
-            onClick={handleOnSubmit}
+          
             className="rounded-lg bg-white w-full border-[4px] border-stone-500 p-3 flex items-center gap-5 cursor-pointer hover:shadow-2xl"
           >
             <Image src={CallgoImage} alt="call us image" className="w-10" />

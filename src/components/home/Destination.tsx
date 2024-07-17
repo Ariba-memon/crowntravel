@@ -366,9 +366,7 @@ const Destination = () => {
   return (
     <div>
       <div className="flex flex-col gap-6 justify-center items-center pt-72 md:pt-48 lg:pt-36 px-5">
-      <p className="text-center text-lg text-white bg-stone-500 rounded-full py-1 px-2 ">
-        Destination
-      </p>
+     
       <p className="text-center text-5xl font-bold ">Hajj / Umrah Packages</p>
       <p className="text-center text-gray-700 max-w-screen-lg">
         When it comes to Best Hajj and Umrah Packages Crown Travels stands out
