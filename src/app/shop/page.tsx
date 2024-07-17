@@ -53,7 +53,7 @@ export default function Shop() {
                 productId = {item.id}
                 title={item.name}
                 price={item.price}
-                label="sell"
+              
                 image={item.image_url}
             />
         )}

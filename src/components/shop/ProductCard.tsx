@@ -13,7 +13,7 @@ interface ProductCardProps {
   title: string;
   price: string;
   image: string;
-  label: string;
+  
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({
@@ -21,12 +21,12 @@ const ProductCard: React.FC<ProductCardProps> = ({
   title = "",
   price = "",
   image = "",
-  label = "sale",
+
 }) => {
   const router = useRouter();
   const [inCart, setInCart] = useState<boolean>(false);
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
-  const [quantity, setQuantity] = useState<number>(1);
+  const [quantity, setQuantity] = useState<number>(0);
   const { toast } = useToast();
   const { setCartCount } = useCart();
 
@@ -89,12 +89,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
     const url = inCart
       ? "https://api.crownumrah.co.uk/shop/api/cart/remove/"
       : "https://api.crownumrah.co.uk/shop/api/cart/add/";
-    const successMessage = inCart
-      ? "Item removed from cart"
-      : "Item added to cart";
-    const errorMessage = inCart
-      ? "Failed to remove item from cart"
-      : "Failed to add item to cart";
+ 
+      
+ 
 
     try {
       const response = await fetch(url, {
@@ -112,21 +109,21 @@ const ProductCard: React.FC<ProductCardProps> = ({
         fetchCartCount(token);
         toast({
           variant: "default",
-          description: successMessage,
+        
         });
       } else if (response.status === 401) {
         handleTokenExpiration();
       } else {
         toast({
           variant: "destructive",
-          description: errorMessage,
+          
         });
       }
     } catch (error) {
       console.error("Error:", error);
       toast({
         variant: "destructive",
-        description: errorMessage,
+  
       });
     }
   };
@@ -163,7 +160,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
   return (
     <div className="relative m-3 bg-slate-100 flex flex-col  md:m-auto overflow-hidden rounded-lg p-5 hover:shadow-2xl hover:scale-105 transition-all duration-300  shadow-lg border-2 border-slate-200 h-96 w-full">
-      <Toaster />
+    
 
       <div className="w-full h-4/5 max-h-48 rounded-lg overflow-hidden bg-gray-200 border border-gray-300 shadow-sm">
         <img
@@ -174,7 +171,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       </div>
 
       <span className="absolute top-0 left-0 w-28 translate-y-4 -translate-x-6 -rotate-45 bg-black text-center text-sm text-white">
-        {label}
+       
       </span>
       <div className="mt-4 ">
         <a href="#">
